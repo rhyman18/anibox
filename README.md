@@ -16,27 +16,27 @@
 
 ## Daftar Tugas
 - Home page (home.js)
-  - [ ] Ambil data untuk carousel (limit=5)
-  - [ ] Ambil data trending
-  - [ ] Ambil data untuk section lain
-  - [ ] Tambahkan section pada variabel `listSection`
-  - [ ] Hapus import variabel yang tidak terpakai
+  - [x] Ambil data untuk carousel (limit=5)
+  - [x] Ambil data trending
+  - [x] Ambil data untuk section lain
+  - [x] Tambahkan section pada variabel `listSection`
+  - [x] Hapus import variabel yang tidak terpakai
   
 - Search result page (search.js)
-  - [ ] Ambil data search (limit bebas)
-  - [ ] Hapus import variabel yang tidak terpakai
-  - [ ] (Optional) Load more pada hasil search (pagination)
+  - [x] Ambil data search (limit bebas)
+  - [x] Hapus import variabel yang tidak terpakai
+  - [x] (Optional) Load more pada hasil search (pagination)
   - [ ] (Optional) Live searching dengan debounce
 
 - Detail page (detail.js)
-  - [ ] Ambil data dari API
-  - [ ] Masukkan data ke masing-masing elemen (description, banner, cover)
-  - [ ] Hapus import variabel yang tidak terpakai
-  - [ ] Tambahkan element untuk menampilkan daftar genre di file detail.html
-  - [ ] Tambahkan script untuk menampilkan daftar genre
-  - [ ] Hapus import variabel yang tidak terpakai
-  - [ ] (Optional) Gunakan data yang belum terpakai dari API, seperti trailer, episode, dll
-  - [ ] (Optional) Tambahkan 'show more' dan 'show less' pada description ([contoh](https://www.geeksforgeeks.org/how-to-create-show-more-and-show-less-functionality-for-hiding-text-using-javascript/))
+  - [x] Ambil data dari API
+  - [x] Masukkan data ke masing-masing elemen (description, banner, cover)
+  - [x] Hapus import variabel yang tidak terpakai
+  - [x] Tambahkan element untuk menampilkan daftar genre di file detail.html
+  - [x] Tambahkan script untuk menampilkan daftar genre
+  - [x] Hapus import variabel yang tidak terpakai
+  - [x] (Optional) Gunakan data yang belum terpakai dari API, seperti trailer, episode, dll
+  - [x] (Optional) Tambahkan 'show more' dan 'show less' pada description ([contoh](https://www.geeksforgeeks.org/how-to-create-show-more-and-show-less-functionality-for-hiding-text-using-javascript/))
 
 ## API
 
