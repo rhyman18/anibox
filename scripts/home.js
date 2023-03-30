@@ -1,5 +1,5 @@
 import { bannerCarouselItem, section } from './components/components.js';
-import { banner, trending } from './data.js'; //? hapus setelah mendapatkan data dari API
+import { banner, trending, popularity, newest, top } from './dataApi.js';
 import { initialSetup } from './index.js';
 
 initialSetup();
@@ -45,23 +45,25 @@ const setBannerCarouselItem = (banner) => {
   };
 };
 
-//? ambil data dari API
-// const trending = ....
-// ....
-
 setBannerCarouselItem(banner);
 
 const listSection = [
   {
     name: 'Trending',
-    data: trending, //? ganti dengan data yang sudah diambil
+    data: trending,
   },
-  // tambahkan section lain
-  // {
-  //   name: 'Popular',
-  //   data: ...,
-  // },
-  // ...
+  {
+    name: 'Popular',
+    data: popularity,
+  },
+  {
+    name: 'Releases',
+    data: newest,
+  },
+  {
+    name: 'Top',
+    data: top,
+  },
 ];
 
 // menampilkan data ke halaman HTML
@@ -87,3 +89,7 @@ listSection.forEach((item) => {
     document.getElementById(sectionName + '-container').scrollLeft += 1000;
   };
 });
+
+// hide loader
+const loader = await document.getElementById('loader');
+loader.style.display = await 'none';

@@ -12,13 +12,13 @@ export const bannerCarouselItem = ({
   }
 
   return `
-    <a href="/detail.html?id=${id}" class="hidden duration-200 ease-linear flex" data-carousel-item>
+    <a href="detail.html?id=${id}" class="hidden duration-200 ease-linear flex" data-carousel-item>
       <div class="basis-2/5 px-16 py-8">
         <h1 class="mb-2 text-4xl font-bold leading-normal tracking-tight text-white">${title}</h1>
         <div class="mb-3">
           <span class="bg-gray-100 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">${year}</span>
-          <span class="bg-gray-100 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">${genre}</span>
           <span class="bg-gray-100 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">${format}</span>
+          <span class="bg-gray-100 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">${genre}</span>
         </div>
         <p class="text-lg font-normal leading-relaxed text-gray-400">${description}</p>
       </div>
@@ -40,16 +40,16 @@ export const section = ({ name, data }) => {
           <div id="${name.toLowerCase()}-container"
             class="flex flex-nowrap overflow-x-scroll scroll-smooth hide-scroll-bar gap-x-4 snap-x snap-mandatory">
             ${data
-              .map((item) =>
-                imageCard({
-                  id: item.id,
-                  title: item.title.romaji,
-                  imageUrl: item.coverImage,
-                  year: item.year,
-                  genre: item.genres[0],
-                })
-              )
-              .join('')}
+      .map((item) =>
+        imageCard({
+          id: item.id,
+          title: item.title.romaji,
+          imageUrl: item.coverImage,
+          year: item.year,
+          genre: item.genres[0],
+        })
+      )
+      .join('')}
           </div>
         </div>
       </div>
@@ -92,9 +92,8 @@ export const imageCard = ({ id, title, imageUrl, year, genre }) => {
       </div>
       <div class="mt-4">
         <p class="text-white">${title}</p>
-        <p class="text-sm text-gray-400 mt-1">${
-          year ? year + ' • ' : ''
-        }${genre}</p>
+        <p class="text-sm text-gray-400 mt-1">${year ? year + ' • ' : ''
+    }${genre}</p>
       </div>
     </a>
   `;

@@ -15,7 +15,7 @@ export const initialSetup = () => {
       let searchKeyword = searchInput.value.trim();
 
       if (searchKeyword.length > 0) {
-        window.location.href = '/search.html?q=' + searchInput.value;
+        window.location.href = 'search.html?q=' + searchInput.value;
       }
     }
   };

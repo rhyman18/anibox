@@ -19,14 +19,21 @@
 </head>
 
 <body class="bg-black text-white">
+
+  <!-- load fetch api -->
+  <div id="loader"></div>
+
   <nav></nav>
 
   <main class="px-16 mt-16 relative w-full">
-    <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">
-      Search result for <span id="search-keyword" class="text-blue-600 dark:text-blue-500">jujutsu kaisen</span></h1>
-    <div id="result-container" class="grid gap-y-10 justify-between gap-x-3 mt-10 mb-10"
+    <h1 id="search-keyword"
+      class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white"></h1>
+    <div id="result-container" class="mx-52 flex flex-wrap gap-y-10 justify-center gap-x-10 mt-10 mb-10"
       style="grid-template-columns: repeat(auto-fill, 14rem);">
     </div>
+
+    <div id="pagination" class="flex justify-center"></div>
+
   </main>
 
   <footer></footer>

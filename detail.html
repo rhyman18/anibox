@@ -19,32 +19,37 @@
 </head>
 
 <body class="bg-black text-white">
+
+  <!-- load fetch api -->
+  <div id="loader"></div>
+
   <nav></nav>
 
   <header class="relative">
-    <div class="absolute h-96 w-full bg-gradient-to-t from-black z-10"> </div>
-    <img id="banner-image" src="" class="block h-96 w-full object-cover" alt="">
+    <div class="absolute h-96 w-full bg-gradient-to-t from-black z-10"></div>
+    <img id="banner-image" class="block h-96 w-full object-cover" alt="">
   </header>
 
-  <main class="mx-56 flex gap-x-10">
+
+  <main class="mx-56 flex justify-center gap-x-10">
     <div class="left">
       <div class="h-80 w-56">
-        <img id="cover-image" src="" alt="" class="block rounded-lg h-80 w-80 object-cover">
+        <img id="cover-image">
       </div>
-      <!-- tambahkan genre -->
     </div>
     <div class="right">
       <h1 id="title"
         class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
       </h1>
-      <div id="info" class="mb-3">
-        <span
-          class="bg-gray-100 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">2022</span>
-      </div>
+      <div id="score" class="flex mb-3"></div>
+      <div id="info" class="mb-3"></div>
+      <!-- tambahkan genre -->
+      <div id="genre" class="mb-3"></div>
       <p id="description" class="my-4 text-base text-gray-300"></p>
-
     </div>
   </main>
+
+  <article id="episodes" class="mx-50 mt-16 flex flex-wrap justify-center gap-x-5"></article>
 
   <footer></footer>
 
