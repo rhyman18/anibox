@@ -70,25 +70,26 @@ scoreEl.innerHTML = resultScore;
 if (data.description.length > 200) {
   descriptionEl.innerHTML = `${data.description.substring(0, 200)}<span id="points">...</span><span id="more">${data.description.substring(201)}</span>`;
   descriptionEl.innerHTML += '<div class="mt-3"><a id="toggle-desc">Show</a></div>';
+  
+  // toggle deskripsi
+  const toggleDescription = document.getElementById('toggle-desc');
+  toggleDescription.addEventListener('click', () => {
+    const showMore = document.getElementById('more');
+    const points = document.getElementById('points');
+    if (points.style.display === 'none') {
+      points.style.display = 'inline';
+      showMore.style.display = 'none';
+      toggleDescription.innerText = 'Show';
+    } else {
+      points.style.display = 'none';
+      showMore.style.display = 'inline';
+      toggleDescription.innerText = 'Hide';
+    }
+  });
 } else {
   descriptionEl.innerHTML = (data.description != null) ? data.description : 'Description Mengalami Kendala';
 }
 
-// toggle deskripsi
-const toggleDescription = document.getElementById('toggle-desc');
-toggleDescription.addEventListener('click', () => {
-  const showMore = document.getElementById('more');
-  const points = document.getElementById('points');
-  if (points.style.display === 'none') {
-    points.style.display = 'inline';
-    showMore.style.display = 'none';
-    toggleDescription.innerText = 'Show';
-  } else {
-    points.style.display = 'none';
-    showMore.style.display = 'inline';
-    toggleDescription.innerText = 'Hide';
-  }
-})
 
 // menambahkan fitur episodes
 if (data.streamingEpisodes.length) {
