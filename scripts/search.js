@@ -1,5 +1,5 @@
 import { imageCard } from './components/components.js';
-import { Search } from './dataApi.js';
+import getSearch from './data/searchApi.js';
 import { initialSetup } from './index.js';
 
 initialSetup();
@@ -16,15 +16,15 @@ const p = urlParams.get('p');
 
 let searchResult = null;
 if (p) {
-  searchResult = await Search.keyword(q, p);
+  searchResult = await getSearch(q, 10, p);
 } else {
-  searchResult = await Search.keyword(q);
+  searchResult = await getSearch(q);
 }
 
 searchKeyword.innerHTML = `Search result : <span class="text-blue-600 dark:text-blue-500">${q}</span>`;
 
 if (!searchResult.length) {
-  resultContainer.innerHTML = '<p>Data not found.</p>';
+  resultContainer.innerHTML = '<h1 class="font-extrabold text-3xl">Data not found.</h1>';
 } else {
   resultContainer.innerHTML = searchResult
     .map((item) =>
@@ -37,10 +37,6 @@ if (!searchResult.length) {
       })
     )
     .join('');
-
-  // hide loader
-  const loader = await document.getElementById('loader');
-  loader.style.display = await 'none';
 
   // menambahkan fitur pagination
   const page = Number(p) ? Number(p) : 1;
@@ -64,7 +60,7 @@ if (!searchResult.length) {
   let current = '';
   let maxNext;
   for (let i = 1; i < 10; i++) {
-    let searchPage = await Search.keyword(q, i);
+    let searchPage = await getSearch(q, 10, i);
     if (searchPage.length) {
       if (page === i) {
         current += `

@@ -1,5 +1,5 @@
 import { bannerCarouselItem, section } from './components/components.js';
-import { banner, trending, popularity, newest, top } from './dataApi.js';
+import { banner, trending, popularity, newest, top } from './data/homeApi.js';
 import { initialSetup } from './index.js';
 
 initialSetup();
@@ -90,6 +90,9 @@ listSection.forEach((item) => {
   };
 });
 
-// hide loader
-const loader = await document.getElementById('loader');
-loader.style.display = await 'none';
+const loader = document.getElementById('loader');
+const content = document.querySelectorAll('.fetch-loader');
+loader.style.display = 'none';
+for (const show of content) {
+  show.style.display = 'block';
+}

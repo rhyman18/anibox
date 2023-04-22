@@ -21,15 +21,14 @@
 <body class="bg-black text-white">
 
   <!-- load fetch api -->
-  <div id="loader"></div>
+  <div id="loader" class="z-50"></div>
 
-  <nav></nav>
+  <nav class="fetch-loader"></nav>
 
   <header class="relative">
     <div class="absolute h-96 w-full bg-gradient-to-t from-black z-10"></div>
     <img id="banner-image" class="block h-96 w-full object-cover" alt="">
   </header>
-
 
   <main class="mx-56 flex justify-center gap-x-10">
     <div class="left">
@@ -51,7 +50,7 @@
 
   <article id="episodes" class="mx-50 mt-16 flex flex-wrap justify-center gap-x-5"></article>
 
-  <footer></footer>
+  <footer class="fetch-loader"></footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
   <script src="./scripts/detail.js" type="module"></script>

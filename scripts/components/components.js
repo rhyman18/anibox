@@ -25,7 +25,7 @@ export const bannerCarouselItem = ({
       <div class="basis-3/5 relative">
         <div class="absolute h-96 w-72 bg-gradient-to-r from-black z-10">
         </div>
-        <img src="${banner}" class="absolute block h-96 object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="${title}">
+        <img src="${(banner) ? banner : 'assets/noimg.png'}" class="absolute block h-96 object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="${title}">
       </div>
     </a>
   `;
@@ -39,17 +39,13 @@ export const section = ({ name, data }) => {
         <div class="relative mt-4">
           <div id="${name.toLowerCase()}-container"
             class="flex flex-nowrap overflow-x-scroll scroll-smooth hide-scroll-bar gap-x-4 snap-x snap-mandatory">
-            ${data
-      .map((item) =>
-        imageCard({
-          id: item.id,
-          title: item.title.romaji,
-          imageUrl: item.coverImage,
-          year: item.year,
-          genre: item.genres[0],
-        })
-      )
-      .join('')}
+            ${data.map((item) => imageCard({
+              id: item.id,
+              title: item.title.romaji,
+              imageUrl: item.coverImage,
+              year: item.year,
+              genre: item.genres[0],
+            })).join('')}
           </div>
         </div>
       </div>
@@ -88,12 +84,11 @@ export const imageCard = ({ id, title, imageUrl, year, genre }) => {
   return `
     <a href="detail.html?id=${id}" class="snap-start cursor-pointer w-56">
       <div class="w-56 h-80 overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
-        <img class="block object-cover h-80 w-80" src="${imageUrl}" alt="${title}">
+        <img class="block object-cover h-80 w-80" src="${(imageUrl) ? imageUrl : 'assets/noimg.png'}" alt="${title}">
       </div>
       <div class="mt-4">
         <p class="text-white">${title}</p>
-        <p class="text-sm text-gray-400 mt-1">${year ? year + ' • ' : ''
-    }${genre}</p>
+        <p class="text-sm text-gray-400 mt-1">${year ? year + ' • ' : ''}${genre}</p>
       </div>
     </a>
   `;
