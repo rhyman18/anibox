@@ -1,3 +1,11 @@
+## Web Api Anime
+
+Membuat aplikasi web dengan menggunakan data api public, menggunakan javascript modular dan fetch API ke web dibawah sebagai tugas menyelesaikan zoom codepolitan sesi 5.
+
+## Deployment Web
+
+Silahkan kunjungi **[https://anibox-tau.vercel.app](https://anibox-tau.vercel.app)** untuk melihat hasil jadi Website. Sebagai keterangan website di deploy di Vercel App.
+
 ## Tugas Frontend Kelasfullstack
 
 1. Clone repository ini dengan command `git clone` atau download source codenya.
